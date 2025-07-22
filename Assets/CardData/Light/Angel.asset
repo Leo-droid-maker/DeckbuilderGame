@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ce4199ee34b4c4daf3aab03187e60b, type: 3}
   m_Name: Angel
   m_EditorClassIdentifier: 
-  cardName: 
-  cardType: 
-  health: 0
-  damageMin: 0
-  damageMax: 0
+  cardName: Angel
+  cardType: 04000000
+  health: 12
+  damageMin: 12
+  damageMax: 12
   cardSprite: {fileID: 0}
-  damageType: 
+  damageType: 04000000

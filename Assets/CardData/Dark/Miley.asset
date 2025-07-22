@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ce4199ee34b4c4daf3aab03187e60b, type: 3}
   m_Name: Miley
   m_EditorClassIdentifier: 
-  cardName: 
-  cardType: 
-  health: 0
-  damageMin: 0
-  damageMax: 0
+  cardName: Miley
+  cardType: 03000000
+  health: 7
+  damageMin: 3
+  damageMax: 7
   cardSprite: {fileID: 0}
-  damageType: 
+  damageType: 03000000
