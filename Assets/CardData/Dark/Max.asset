@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Max
   m_EditorClassIdentifier: 
   cardName: Max
-  cardType: 0400000003000000
+  cardType: 0300000004000000
   health: 20
   damageMin: 1
   damageMax: 3
-  damageType: 0400000003000000
+  cardSprite: {fileID: 0}
+  damageType: 0300000004000000

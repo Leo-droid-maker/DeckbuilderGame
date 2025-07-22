@@ -290,6 +290,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1260516473506957098, guid: 1f42e9fa21faa444fa484bc327faf443, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477113707224189215, guid: 1f42e9fa21faa444fa484bc327faf443, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182936705740962929, guid: 1f42e9fa21faa444fa484bc327faf443, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4229015255191189503, guid: 1f42e9fa21faa444fa484bc327faf443, type: 3}
       propertyPath: m_Camera
       value: 
@@ -297,6 +309,14 @@ PrefabInstance:
     - target: {fileID: 5804074999245928897, guid: 1f42e9fa21faa444fa484bc327faf443, type: 3}
       propertyPath: m_Name
       value: CardPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337932712178378192, guid: 1f42e9fa21faa444fa484bc327faf443, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: e4ab27d2f54ba7a45a331ae04ed73403, type: 2}
+    - target: {fileID: 7259929708528269680, guid: 1f42e9fa21faa444fa484bc327faf443, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9097365967071395111, guid: 1f42e9fa21faa444fa484bc327faf443, type: 3}
       propertyPath: m_LocalPosition.x
