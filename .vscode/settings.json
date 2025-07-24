@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "DeckbuilderTutorialProject.sln"
+    "dotnet.defaultSolution": "DeckbuilderTutorialProjectUnity6.sln"
 }

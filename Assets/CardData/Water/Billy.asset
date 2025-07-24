@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Billy
   m_EditorClassIdentifier: 
   cardName: Billy
-  cardType: 0200000005000000
   health: 5
   damageMin: 3
   damageMax: 6
-  damageType: 0200000005000000
+  cardSprite: {fileID: 0}
+  cardType: 020000000500000004000000010000000000000003000000
+  damageType: 020000000500000004000000010000000000000003000000

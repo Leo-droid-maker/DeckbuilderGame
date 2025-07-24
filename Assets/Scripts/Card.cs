@@ -9,11 +9,11 @@ namespace LeoDroidMakerObjects
     public class Card : ScriptableObject
     {
         public string cardName;
-        public List<CardType> cardType;
         public int health;
         public int damageMin;
         public int damageMax;
         public Sprite cardSprite;
+        public List<CardType> cardType;
         public List<DamageType> damageType;
 
         public enum CardType
