@@ -9,6 +9,7 @@ public class CardDisplay : MonoBehaviour
 {
     public Card cardData;
     public Image cardImage;
+    public Image damageImage;
     public TMP_Text nameText;
     public TMP_Text healthText;
     public TMP_Text damageText;
@@ -40,6 +41,8 @@ public class CardDisplay : MonoBehaviour
     public void UpdateCardDisplay()
     {
         cardImage.color = cardColors[(int)cardData.cardType[0]];
+        var damageType = cardData.damageType[0];
+        damageImage.color = typeColors[(Card.CardType)damageType];
 
         nameText.text = cardData.cardName;
         healthText.text = cardData.health.ToString();
