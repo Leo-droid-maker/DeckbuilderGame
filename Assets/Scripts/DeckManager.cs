@@ -6,6 +6,7 @@ public class DeckManager : MonoBehaviour
 {
     public List<Card> allCards = new List<Card>();
     private int currenIndex = 0;
+    public int maxHandSize = 7;
 
     public void Start()
     {
@@ -16,10 +17,13 @@ public class DeckManager : MonoBehaviour
 
     public void DrawCard(HandManager handManager)
     {
+        if (handManager.cardsInHand.Count == maxHandSize)
+            return;
         if (allCards.Count == 0)
             return;
         Card nextCard = allCards[currenIndex];
         handManager.AddCardToHand(nextCard);
+        allCards.RemoveAt(currenIndex);
         currenIndex = (currenIndex + 1) % allCards.Count;
     }
 }
