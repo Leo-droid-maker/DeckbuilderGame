@@ -30,7 +30,7 @@ public class HandManager : MonoBehaviour
 
     public void Update()
     {
-        UpdateHandVisuals();
+        // UpdateHandVisuals();
     }
 
     private void UpdateHandVisuals()
@@ -38,10 +38,10 @@ public class HandManager : MonoBehaviour
         int cardCount = cardsInHand.Count;
         for (int i = 0; i < cardCount; i++)
         {
-            float rotationAngle = (fanSpread * (i - (cardCount - 1) / 2f));
+            float rotationAngle = fanSpread * (i - (cardCount - 1) / 2f);
             cardsInHand[i].transform.localRotation = Quaternion.Euler(x: 0f, y: 0f, z: rotationAngle);
 
-            float horizontalOffset = (cardSpacing * (i - (cardCount - 1) / 2f));
+            float horizontalOffset = cardSpacing * (i - (cardCount - 1) / 2f);
 
             float normalizedPosition = (cardCount > 1)
             ? (2f * i / (cardCount - 1) - 1f)
