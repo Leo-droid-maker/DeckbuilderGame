@@ -1,17 +1,21 @@
-using UnityEngine;
-using LeoDroidMakerObjects;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using SinuousProductions;
 using System;
 
 public class HandManager : MonoBehaviour
 {
     public DeckManager deckManager;
-    public GameObject cardPrefab; //Assing card prefab in inspector
+    public GameObject cardPrefab; //Assign card prefab in inspector
     public Transform handTransform; //Root of the hand position
-    public float fanSpread = -7.5f;
-    public float cardSpacing = 150f;
+    public float fanSpread = 7.5f;
+
+    public float cardSpacing = 100f;
     public float verticalSpacing = 100f;
-    public List<GameObject> cardsInHand = new List<GameObject>(); //Hold a list of the cards objects in our hand
+    public int maxHandSize = 12;
+    public List<GameObject> cardsInHand = new List<GameObject>(); //Hold a list of the card objects in our hand
+
     void Start()
     {
 
@@ -19,39 +23,46 @@ public class HandManager : MonoBehaviour
 
     public void AddCardToHand(Card cardData)
     {
-        //Instantiate a card
-        GameObject newCard = Instantiate(original: cardPrefab, position: handTransform.position, rotation: Quaternion.identity, parent: handTransform);
+
+        //Instantiate the card
+        GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
         cardsInHand.Add(newCard);
 
+        //Set the CardData of the instantiated card
         newCard.GetComponent<CardDisplay>().cardData = cardData;
+
 
         UpdateHandVisuals();
     }
 
-    public void Update()
+    void Update()
     {
-        // UpdateHandVisuals();
+        //UpdateHandVisuals();
     }
 
     private void UpdateHandVisuals()
     {
         int cardCount = cardsInHand.Count;
+
+        if (cardCount == 1)
+        {
+            cardsInHand[0].transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            cardsInHand[0].transform.localPosition = new Vector3(0f, 0f, 0f);
+            return;
+        }
+
         for (int i = 0; i < cardCount; i++)
         {
-            float rotationAngle = fanSpread * (i - (cardCount - 1) / 2f);
-            cardsInHand[i].transform.localRotation = Quaternion.Euler(x: 0f, y: 0f, z: rotationAngle);
+            float rotationAngle = (fanSpread * (i - (cardCount - 1) / 2f));
+            cardsInHand[i].transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
 
-            float horizontalOffset = cardSpacing * (i - (cardCount - 1) / 2f);
+            float horizontalOffset = (cardSpacing * (i - (cardCount - 1) / 2f));
 
-            float normalizedPosition = (cardCount > 1)
-            ? (2f * i / (cardCount - 1) - 1f)
-            : 0f;
+            float normalizedPosition = (2f * i / (cardCount - 1) - 1f); //Normalize card position between -1, 1
+            float verticalOffset = verticalSpacing * (1 - normalizedPosition * normalizedPosition);
 
-            float verticalOffset = (cardCount > 1)
-            ? verticalSpacing * (1 - normalizedPosition * normalizedPosition)
-            : 0f;
-
-            cardsInHand[i].transform.localPosition = new Vector3(x: horizontalOffset, y: verticalOffset, z: 0f);
+            //Set card position
+            cardsInHand[i].transform.localPosition = new Vector3(horizontalOffset, verticalOffset, 0f);
         }
     }
 }
