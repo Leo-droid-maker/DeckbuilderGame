@@ -42,7 +42,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         originalRotation = rectTransform.localRotation;
 
         updateCardPlayPostion();
-        updatePlayPostion();
+        // updatePlayPostion();
     }
 
     void Update()
@@ -56,7 +56,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         {
             updatePlayPostion();
         }
-        
+
         switch (currentState)
         {
             case 1:
@@ -125,7 +125,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
             {
                 currentState = 3;
                 playArrow.SetActive(true);
-                rectTransform.localPosition = Vector3.Lerp(rectTransform.position, playPosition, lerpFactor);
+                rectTransform.localPosition = Vector3.Lerp(rectTransform.localPosition, playPosition, lerpFactor);
             }
         }
     }
