@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -47,7 +45,7 @@ public class CardDisplay : MonoBehaviour
         cardImage.color = cardColors[(int)cardData.cardType[0]];
 
         damageImage.color = typeColors[(int)cardData.damageType[0]];
-        
+
         nameText.text = cardData.cardName;
         healthText.text = cardData.health.ToString();
         damageText.text = $"{cardData.damageMin} - {cardData.damageMax}";
@@ -55,11 +53,13 @@ public class CardDisplay : MonoBehaviour
         //Update type images
         for (int i = 0; i < typeImages.Length; i++)
         {
-            if (i < cardData.cardType.Count){
+            if (i < cardData.cardType.Count)
+            {
                 typeImages[i].gameObject.SetActive(true);
                 typeImages[i].color = typeColors[(int)cardData.cardType[i]];
             }
-            else{
+            else
+            {
                 typeImages[i].gameObject.SetActive(false);
             }
         }

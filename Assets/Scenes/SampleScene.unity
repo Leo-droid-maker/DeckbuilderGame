@@ -491,6 +491,54 @@ MonoBehaviour:
   widthMultiplier: 1
   heightMultiplier: 0
   updatePosition: 0
+--- !u!1 &1117005379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117005381}
+  - component: {fileID: 1117005382}
+  m_Layer: 0
+  m_Name: GridManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117005381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117005379}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1117005382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117005379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57642a42596a8c645ad5746cfd8ce0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 8
+  height: 4
+  gridCellPrefab: {fileID: 6175337718278017564, guid: d92faa2bc3f07894797fb86ca1a8f258, type: 3}
+  gridObjects: []
 --- !u!1001 &4843451193641989340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -539,6 +587,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1581473831133679974, guid: 5de1aa25dd562de449bf1027d0bd0ab9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581473831133679974, guid: 5de1aa25dd562de449bf1027d0bd0ab9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7685364952004688851, guid: 5de1aa25dd562de449bf1027d0bd0ab9, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -556,3 +612,4 @@ SceneRoots:
   - {fileID: 321676978}
   - {fileID: 635701772}
   - {fileID: 4843451193641989340}
+  - {fileID: 1117005381}
