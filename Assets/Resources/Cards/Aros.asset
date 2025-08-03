@@ -9,13 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba660c98185fb54eabd9ea2e41b0904, type: 3}
+  m_Script: {fileID: 11500000, guid: 19ce4199ee34b4c4daf3aab03187e60b, type: 3}
   m_Name: Aros
   m_EditorClassIdentifier: 
-  cardName: 
-  cardType: 0500000001000000
-  health: 18
-  damageMin: 6
-  damageMax: 12
-  cardSprite: {fileID: 0}
-  damageType: 05000000
+  cardName: Aros
+  cardType: 04000000
+  health: 7
+  damageMin: 4
+  damageMax: 6
+  cardSprite: {fileID: -2629138569536655042, guid: 2eee846ab2f54f54cb21c2009bc841d9, type: 3}
+  damageType: 04000000
+  prefab: {fileID: 1797753984441286, guid: e0bd3015af80d894da39ba968ceb587e, type: 3}
+  range: 0
+  attackPattern: 0
+  priorityTarget: 0

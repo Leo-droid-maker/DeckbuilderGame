@@ -9,13 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba660c98185fb54eabd9ea2e41b0904, type: 3}
+  m_Script: {fileID: 11500000, guid: 19ce4199ee34b4c4daf3aab03187e60b, type: 3}
   m_Name: Pulvis
   m_EditorClassIdentifier: 
   cardName: Pulvis
-  cardType: 01000000
-  health: 25
-  damageMin: 3
-  damageMax: 3
-  cardSprite: {fileID: 0}
-  damageType: 01000000
+  cardType: 04000000
+  health: 6
+  damageMin: 4
+  damageMax: 5
+  cardSprite: {fileID: -2629138569536655042, guid: af39961b4d953e744881353cddfc2bf0, type: 3}
+  damageType: 04000000
+  prefab: {fileID: 1577502023061052, guid: 438423df18ba0f64ab984b82da4eefee, type: 3}
+  range: 0
+  attackPattern: 0
+  priorityTarget: 0

@@ -1,6 +1,6 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -11,6 +11,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
     private int currentState = 0;
     private Quaternion originalRotation;
     private Vector3 originalPosition;
+    private GridManager gridManager;
 
     [SerializeField] private float selectScale = 1.1f;
     [SerializeField] private Vector2 cardPlay;
@@ -43,6 +44,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
         updateCardPlayPostion();
         // updatePlayPostion();
+        gridManager = FindFirstObjectByType<GridManager>();
     }
 
     void Update()
@@ -71,10 +73,10 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                 break;
             case 3:
                 HandlePlayState();
-                if (!Input.GetMouseButton(0)) //Check if mouse button is released
-                {
-                    TransitionToState0();
-                }
+                // if (!Input.GetMouseButton(0)) //Check if mouse button is released
+                // {
+                //     TransitionToState0();
+                // }
                 break;
         }
     }
@@ -147,6 +149,28 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
     {
         rectTransform.localPosition = playPosition;
         rectTransform.localRotation = Quaternion.identity;
+
+        if (!Input.GetMouseButton(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+            if (hit.collider != null && hit.collider.GetComponent<GridCell>())
+            {
+                GridCell cell = hit.collider.GetComponent<GridCell>();
+                Vector3 targetPosition = cell.gridIndex;
+
+                if (gridManager.AddObjectToGrid(GetComponent<CardDisplay>().cardData.prefab, targetPosition))
+                {
+                    HandManager handManager = FindAnyObjectByType<HandManager>();
+                    handManager.cardsInHand.Remove(gameObject);
+                    handManager.UpdateHandVisuals();
+                    Debug.Log("Card palced");
+                    Destroy(gameObject);
+                }
+            }
+            TransitionToState0();
+        }
 
         if (Input.mousePosition.y < cardPlay.y)
         {
